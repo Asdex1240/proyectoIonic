@@ -6,7 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-
   constructor() {}
-
+  fov(frove){
+    if(frove== 'frutas'){
+      console.log('FRUTAS');
+    }else if(frove== 'verduras'){
+      console.log('VERDURAS');
+    }else if(frove=='linterna'){
+      console.log('LINTERNA');
+    }
+  }
 }

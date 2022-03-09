@@ -8,10 +8,15 @@
 
 <ion-content [fullscreen]="true">
   <section>
-    <ion-button color="secondary" size="large" fill="solid">Frutas</ion-button>
-    <ion-button color=""size="large">Verduras</ion-button>
+    <ion-button color="secondary" size="large" fill="solid" (click)="fov(frove='frutas')">Frutas</ion-button>
+    <ion-button color=""size="large" (click)="fov(frove='verduras')">Verduras</ion-button>
   </section>
-    <ion-button size="large" >
+    <ion-button size="large" (click)="fov(frove='linterna')">
     <ion-icon name="flashlight-outline"></ion-icon>
   </ion-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="navigate-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

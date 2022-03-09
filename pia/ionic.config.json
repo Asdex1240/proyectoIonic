@@ -1,5 +1,7 @@
 {
   "name": "pia",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

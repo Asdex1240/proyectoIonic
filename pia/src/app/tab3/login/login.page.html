@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <h1 class="ion-text-center">Entrar</h1>
+          <ion-input type="email" placeholder="Correo" #emailHecho></ion-input>
+          <ion-input type="password" placeholder="Escribe tu contraseña" #passwordHecho></ion-input>
+          <ion-button color="primary" (click)="funcion()">
+            Entrar
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <h1 class="ion-text-center">Crea tu cuenta</h1>
+          <ion-input type="email" placeholder="Correo" #email></ion-input>
+          <ion-input type="password" placeholder="Escribe tu contraseña" #password></ion-input>
+          <ion-input type="text" placeholder="Escribe tu nombre" #name></ion-input>
+          <ion-input type="text" placeholder="Nombre de empresa" #empresa></ion-input>
+          <ion-button color="primary" (click)="funcion()">
+            Guardar
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

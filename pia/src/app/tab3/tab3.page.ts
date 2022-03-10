@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -6,8 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-  constructor() {}
+  constructor(private router: Router) {}
   
+  crearCuenta(){
+    this.router.navigate(['/tabs/tab3/login']);
+  }
+  
+  login(){
+    this.router.navigate(['/tabs/tab3/login']);
+  }
   
   
 }

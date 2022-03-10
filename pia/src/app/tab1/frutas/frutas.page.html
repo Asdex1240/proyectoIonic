@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Frutas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row >
+      <ion-col *ngFor="let fruta of frutas" size="6">
+        <ion-card>
+          <ion-img [src]="fruta.img"></ion-img>
+          <ion-card-header>
+            <ion-card-title>{{fruta.name}} </ion-card-title>
+            <ion-card-subtitle>{{fruta.descripcion}}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -8,8 +8,12 @@ const routes: Routes = [
     component: Tab1Page,
   },
   {
-    path: 'productos',
-    loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
+    path: 'frutas',
+    loadChildren: () => import('./frutas/frutas.module').then( m => m.FrutasPageModule)
+  },
+  {
+    path: 'verduras',
+    loadChildren: () => import('./verduras/verduras.module').then( m => m.VerdurasPageModule)
   }
 ];
 

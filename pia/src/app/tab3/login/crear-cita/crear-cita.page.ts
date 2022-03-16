@@ -9,6 +9,10 @@ export class CrearCitaPage implements OnInit {
 
   constructor() { }
 
+  fecha(hola){
+    console.log("Fecha creada");
+  }
+
   ngOnInit() {
   }
 

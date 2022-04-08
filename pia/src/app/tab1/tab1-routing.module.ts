@@ -14,7 +14,11 @@ const routes: Routes = [
   {
     path: 'verduras',
     loadChildren: () => import('./verduras/verduras.module').then( m => m.VerdurasPageModule)
-  }
+  },
+  {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
+  },
 ];
 
 @NgModule({

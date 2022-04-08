@@ -16,6 +16,10 @@ export class Tab1Page {
       console.log('VERDURAS');
     }else if(frove=='linterna'){
       console.log('LINTERNA');
+    }else if(frove=='map'){
+      console.log('Mapa');
+      this.router.navigate(['tabs/tab1/map']);
     }
+
   }
 }

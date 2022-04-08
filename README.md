@@ -1,7 +1,7 @@
 # proyectoIonic
 Hola Mundo!
 Muestra productos (100%)
-GPS (0%)
+GPS (30%)
 login general(80%)
 login cliente (5%)
 login dueño (0%)

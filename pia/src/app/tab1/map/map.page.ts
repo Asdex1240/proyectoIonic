@@ -21,8 +21,8 @@ export class MapPage {
   async getCurrentPosition() {
     const coordinates = await Geolocation.getCurrentPosition();
     this.currentCenter = {
-      lat: coordinates.coords.latitude,
-      lng: coordinates.coords.longitude
+      lat: 25.72569943459976,
+      lng: -100.31498633730602
     };
 
     console.log('Current position:', coordinates);

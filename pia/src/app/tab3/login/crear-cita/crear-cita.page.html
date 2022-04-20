@@ -13,10 +13,11 @@
       <ion-card>
         <ion-card-content>
           <h1 class="ion-text-center">Agenda</h1>
-          <ion-input type="text" placeholder="Ingresa día..." #dia></ion-input>
-          <ion-input type="text" placeholder="Ingresa mes..." #mes></ion-input>
-          <ion-input type="text" placeholder="Ingresa año..." #year></ion-input>
-          <ion-button (click)="fecha(hola=1)">¡Agenda!</ion-button>
+          <form action="" method="post">
+            <ion-input type="date" placeholder="Ingresa día..." #dia></ion-input>
+            <ion-button type="submit">¡Agenda!</ion-button>
+          </form>
+          
         </ion-card-content>
       </ion-card>
     </ion-col>

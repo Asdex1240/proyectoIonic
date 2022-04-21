@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CrearCitaPageRoutingModule } from './crear-cita-routing.module';
+import { RegisterPageRoutingModule } from './register-routing.module';
 
-import { CrearCitaPage } from './crear-cita.page';
+import { RegisterPage } from './register.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CrearCitaPageRoutingModule
+    RegisterPageRoutingModule
   ],
-  declarations: [CrearCitaPage]
+  declarations: [RegisterPage]
 })
-export class CrearCitaPageModule {}
+export class RegisterPageModule {}

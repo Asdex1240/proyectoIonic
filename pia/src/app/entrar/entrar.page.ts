@@ -18,7 +18,7 @@ export class EntrarPage implements OnInit {
     if(user){
       console.log("Sesion iniciada");
       
-      this.router.navigateByUrl('/tabs/tab3/login');
+      this.router.navigateByUrl('/tabs/tab3');
     }
   }
 

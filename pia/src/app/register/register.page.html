@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-      <ion-title>Inicia Sesión</ion-title>
+      <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,12 +9,12 @@
     <ion-col>
       <ion-card>
         <ion-card-content>
-          <h1 class="ion-text-center">Inicia Sesión</h1>
+          <h1 class="ion-text-center">Registrar</h1>
           <ion-input type="text" [(ngModel)]="user.email" placeholder="Correo"></ion-input>
           <ion-input type="password" [(ngModel)]="user.password" placeholder="Escribe tu contraseña"></ion-input>
           <ion-item-divider>
-            <ion-button size="larger" (click)="onLogin()">Iniciar</ion-button>
-            <ion-button size="larger" routerLink="/tabs/register">Registrate</ion-button>
+            <ion-button size="larger" (click)="onRegister()">Registrar</ion-button>
+            <ion-button size="larger" routerLink="/tabs/entrar">Entrar</ion-button>
         </ion-item-divider>
         </ion-card-content>
       </ion-card>

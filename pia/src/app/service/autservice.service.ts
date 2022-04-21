@@ -15,6 +15,7 @@ export class AutserviceService {
       return await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
     }
     catch(error){
+      alert("Correo ó contraseña erronea");
       console.log('Error en login user', error);
       return error;
     }

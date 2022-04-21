@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { AuthGuard } from 'src/app/guards/auth.guard';
 import { LoginPage } from './login.page';
 
 const routes: Routes = [
@@ -10,11 +10,13 @@ const routes: Routes = [
   },
   {
     path: 'crear-cita',
-    loadChildren: () => import('./crear-cita/crear-cita.module').then( m => m.CrearCitaPageModule)
+    loadChildren: () => import('./crear-cita/crear-cita.module').then( m => m.CrearCitaPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'configuraciones',
-    loadChildren: () => import('./configuraciones/configuraciones.module').then( m => m.ConfiguracionesPageModule)
+    loadChildren: () => import('./configuraciones/configuraciones.module').then( m => m.ConfiguracionesPageModule),
+    canActivate: [AuthGuard]
   }
 ];
 

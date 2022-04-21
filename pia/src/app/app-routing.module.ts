@@ -9,11 +9,7 @@ const routes: Routes = [
   {
     path: 'entrar',
     loadChildren: () => import('./entrar/entrar.module').then( m => m.EntrarPageModule)
-  },
-  {
-    path: 'entrar',
-    loadChildren: () => import('./entrar/entrar.module').then( m => m.EntrarPageModule)
-  },
+  }
 ];
 @NgModule({
   imports: [

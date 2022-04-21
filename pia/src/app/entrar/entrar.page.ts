@@ -8,13 +8,18 @@ import { User } from '../models/user.model';
   styleUrls: ['./entrar.page.scss'],
 })
 export class EntrarPage implements OnInit {
-
+  user: User = new User;
   constructor(private router: Router, private authSvc: AutserviceService) { }
 
   ngOnInit() {
   }
-  onLogin(){
-
+  async onLogin(){
+    const user = await this.authSvc.onLogin(this.user);
+    if(user){
+      console.log("Sesion iniciada");
+      
+      this.router.navigateByUrl('/tabs/tab3/login');
+    }
   }
 
 }

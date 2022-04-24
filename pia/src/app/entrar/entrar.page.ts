@@ -17,7 +17,6 @@ export class EntrarPage implements OnInit {
     const user = await this.authSvc.onLogin(this.user);
     if(user){
       console.log("Sesion iniciada");
-      
       this.router.navigateByUrl('/tabs/tab3');
     }
   }

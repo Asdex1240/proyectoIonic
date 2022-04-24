@@ -9,8 +9,11 @@ import { AutserviceService } from 'src/app/service/autservice.service';
 })
 export class Tab3Page implements OnInit {
 
-  constructor(private router: Router,private authSvc: AutserviceService, private afAuth: AngularFireAuth) { }
+  constructor(private router: Router,
+              private authSvc: AutserviceService, 
+              private afAuth: AngularFireAuth) { }
   ngOnInit() {}
+
   onLogout(){
     console.log('LogOut');
     this.afAuth.auth.signOut();

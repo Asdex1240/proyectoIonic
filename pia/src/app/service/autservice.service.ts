@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from '../models/user.model';
+import { UserR } from '../models/user.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -22,9 +23,9 @@ export class AutserviceService {
   }
 
   //register
-  async onRegister(user: User){
+  async onRegister(datos: UserR){
     try{
-      return await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
+      return await this.afAuth.auth.createUserWithEmailAndPassword(datos.email, datos.password);
     }
     catch(error){
       alert("Error en login, intentalo de nuevo :D");

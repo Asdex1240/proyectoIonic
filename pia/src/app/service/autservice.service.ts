@@ -16,7 +16,6 @@ export class AutserviceService {
       return await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
     }
     catch(error){
-      alert("Correo ó contraseña erronea");
       console.log('Error en login user', error);
       return error;
     }
@@ -28,9 +27,12 @@ export class AutserviceService {
       return await this.afAuth.auth.createUserWithEmailAndPassword(datos.email, datos.password);
     }
     catch(error){
-      alert("Error en login, intentalo de nuevo :D");
       console.log('Error en register user', error);
 
     }
+  }
+
+  stateUser(){
+    return this.afAuth.authState;
   }
 }

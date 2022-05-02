@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title class="ion-text-center">
       Cuenta
     </ion-title>
   </ion-toolbar>
@@ -13,13 +13,13 @@
   <h4 class="ion-text-center">{{empresa}}</h4>
 
   <ion-list>
-    <ion-item *ngIf="perfil=='cliente'">
+    <ion-item *ngIf="perfil=='cliente'" (click)="goTo(ir='cita')">
       <ion-label class="ion-text-center">Crear cita</ion-label>
     </ion-item>
-    <ion-item *ngIf="perfil=='admin'">
+    <ion-item *ngIf="perfil=='admin'" (click)="goTo(ir='inv')">
       <ion-label class="ion-text-center">Inventario</ion-label>
     </ion-item>
-    <ion-item *ngIf="perfil=='admin'">
+    <ion-item *ngIf="perfil=='admin'" (click)="goTo(ir='cita')">
       <ion-label class="ion-text-center">Mostrar citas</ion-label>
     </ion-item>
     <ion-item (click)="onLogout()">

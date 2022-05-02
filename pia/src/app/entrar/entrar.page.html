@@ -5,19 +5,23 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-row>
-    <ion-col>
-      <ion-card>
-        <ion-card-content>
-          <h1 class="ion-text-center">Inicia Sesión</h1>
-          <ion-input type="text" [(ngModel)]="user.email" placeholder="Correo"></ion-input>
-          <ion-input type="password" [(ngModel)]="user.password" placeholder="Escribe tu contraseña"></ion-input>
-          <ion-item-divider>
-            <ion-button size="larger" (click)="onLogin()">Iniciar</ion-button>
-            <ion-button size="larger" routerLink="/tabs/register">Registrate</ion-button>
-        </ion-item-divider>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-  </ion-row>
+  <div class="wrapper">
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-content>
+            <h1 class="ion-text-center">Inicia Sesión</h1>
+            <ion-input type="text" [(ngModel)]="user.email" placeholder="Correo"></ion-input>
+            <ion-input type="password" [(ngModel)]="user.password" placeholder="Escribe tu contraseña"></ion-input>
+            <ion-item-divider>
+              <ion-button size="larger" (click)="onLogin()">Iniciar</ion-button>
+            
+              <ion-button size="larger" routerLink="/tabs/register">Registrate</ion-button>
+          </ion-item-divider>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+
 </ion-content>

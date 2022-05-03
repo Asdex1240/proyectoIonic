@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>citas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="perfil=='admin'">
+    <ion-card-content>
+      <ion-card-header>
+        <ion-card-subtitle class="ion-text-center">Tus citas</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="perfil=='cliente'">
+    <ion-card-content>
+      <ion-card-header>
+        <ion-card-subtitle class="ion-text-center">Agenda tu cita</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

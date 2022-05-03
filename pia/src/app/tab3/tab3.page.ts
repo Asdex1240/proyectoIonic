@@ -32,7 +32,7 @@ export class Tab3Page implements OnInit {
   onLogout(){
     console.log('LogOut');
     this.afAuth.auth.signOut();
-    this.router.navigateByUrl('/tabs/tab1');
+    this.router.navigateByUrl('/tabs/entrar');
   }
 
   getDatosUser(uid: string){
@@ -46,11 +46,10 @@ export class Tab3Page implements OnInit {
       }
     })
   }
+  
   goTo(ir){
     if(ir=='cita'){
-      this.router.navigate(['tabs/citas']);
-    }else if(ir=='inv'){
-      this.router.navigate(['tabs/inventario']);
+      this.router.navigate(['tabs/tab3/citas']);
     }
   }
 }

@@ -7,6 +7,10 @@ const routes: Routes = [
     path: '',
     component: Tab3Page,
   },
+  {
+    path: 'citas',
+    loadChildren: () => import('./citas/citas.module').then( m => m.CitasPageModule)
+  },
 ];
 
 @NgModule({

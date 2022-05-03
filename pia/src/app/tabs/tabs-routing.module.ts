@@ -29,14 +29,6 @@ const routes: Routes = [
         loadChildren: () => import('../register/register.module').then(m => m.RegisterPageModule)
       },
       {
-        path: 'citas',
-        loadChildren: () => import('../citas/citas.module').then(m => m.CitasPageModule)
-      },
-      {
-        path: 'inventario',
-        loadChildren: () => import('../inventario/inventario.module').then(m => m.InventarioPageModule)
-      },
-      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

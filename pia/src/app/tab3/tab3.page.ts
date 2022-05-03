@@ -50,6 +50,8 @@ export class Tab3Page implements OnInit {
   goTo(ir){
     if(ir=='cita'){
       this.router.navigate(['tabs/tab3/citas']);
+    }else if(ir=='inv'){
+      this.router.navigate(['tabs/tab3/inventario']);
     }
   }
 }

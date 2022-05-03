@@ -10,6 +10,7 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import { environment } from 'src/environments/environment';
 import { AngularFirestore } from 'angularfire2/firestore';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

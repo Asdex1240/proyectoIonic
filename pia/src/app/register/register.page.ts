@@ -5,6 +5,7 @@ import { User } from '../models/user.model';
 import { UserR } from '../models/user.model'; 
 import { RegistroService } from '../service/registro.service';
 import { InteractionService } from '../service/interaction.service';
+import { FirestorageService } from '../service/firestorage.service';
 @Component({
   selector: 'app-register',
   templateUrl: 'register.page.html',
@@ -24,7 +25,8 @@ export class RegisterPage implements OnInit {
   constructor(private router: Router,
              private authSvc: AutserviceService,  
              private registro: RegistroService,
-             private interaction: InteractionService) {}
+             private interaction: InteractionService,
+             private firestoreSvc: FirestorageService) {}
   public isLoged : any = false;
 ngOnInit(){}
   async onRegister(){
@@ -46,5 +48,13 @@ ngOnInit(){}
       this.interaction.presentToast('Registrado con exito!');
       this.router.navigateByUrl('/tabs/entrar');
     }
+  }
+  async newImageUpload(event: any){
+    const path = 'Productos';
+    const name = 'prueba';
+    const file = event.target.files[0];
+    const res = await this.firestoreSvc.uploadImage(file, path, name);
+    console.log('recibi res de la promesa', res);
+    console.log('Fin de la funcion newUploadimg');
   }
 }

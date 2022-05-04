@@ -32,4 +32,9 @@ export class RegistroService {
   updateDoc(path: string, id: string, data: any) {
     return  this.dbFirestore.collection(path).doc(id).update(data);
   }
+
+  deleteDoc(path: string, id: string) {
+    const collection = this.dbFirestore.collection(path);
+    return collection.doc(id).delete();
+  }
 }

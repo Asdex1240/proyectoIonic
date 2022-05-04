@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { FirebaseStorage } from 'angularfire2';
-import { resolve } from 'dns';
+import { AngularFireStorage } from '@angular/fire/storage';
+
 @Injectable({
   providedIn: 'root'
 })
 export class FirestorageService {
 
-  constructor(private storage: FirebaseStorage) { }
+  constructor(private storage: AngularFireStorage) { }
 
   uploadImage(file: any, path: string, nombre: string): Promise<string>{
     return new Promise( resolve=>{

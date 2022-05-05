@@ -34,14 +34,13 @@ export class InventarioPage implements OnInit {
     this.enableNewProducto = true;
     this.newProducto = {
       nombre: '',
-      precioNormal: null,
-      precioReducido: null,
       foto: 'htt',
       id: this.firestoreService.getId(),
-      fecha: new Date()
+      descrip: ''
     };
   }
   getProductos() {
+
     this.firestoreService.getCollection<Producto>(this.path).subscribe(  res => {
            this.productos = res;
     });
@@ -50,16 +49,14 @@ export class InventarioPage implements OnInit {
         this.presentLoading();
         const path = 'Productos';
         const name = this.newProducto.nombre;
-        if (this.newFile !== undefined) {
         const res = await this.firestorageService.uploadImage(this.newFile, path, name);
         this.newProducto.foto = res;
-        }
         this.firestoreService.createDoc(this.newProducto, this.path, this.newProducto.id).then( res => {
-            this.loading.dismiss();
-            this.presentToast('guardo con exito');
+          this.loading.dismiss();
+          this.presentToast('guardo con exito');
         }).catch( error => {
-            this.presentToast('no se pude guardar');
-        });
+          this.presentToast('no se pude guardar');
+          });
     }
 
     async deleteProducto(producto: Producto) {

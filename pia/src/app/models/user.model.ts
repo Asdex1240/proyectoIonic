@@ -10,4 +10,5 @@ export class UserR {
     password: string;
     uid: string;
     perfil: 'admin' | 'cliente';
+    foto: string;
 }

@@ -4,8 +4,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <div class="wrapper">
+<ion-content [fullscreen]="true">
+  
     <ion-card>
       <ion-card-content>
         <h1 class="ion-text-center">Registrar</h1>
@@ -13,12 +13,38 @@
         <ion-input type="text" [(ngModel)]="datos.empresa" placeholder="Empresa"></ion-input>
         <ion-input type="text" [(ngModel)]="datos.email" placeholder="Correo"></ion-input>
         <ion-input type="password" [(ngModel)]="datos.password" placeholder="Escribe tu contraseña"></ion-input>
+        <ion-item>
+          <ion-label class="normal">
+            Tomar Foto:
+          </ion-label>
+        <ion-buttons>
+          <ion-button (click)="takePicture()">
+            <ion-icon slot="icon-only" name="camera" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        </ion-item>
+        <ion-item>
+          <ion-label class="normal">
+              Foto:
+          </ion-label>
+          <ion-buttons slot="end">
+            <ion-button>
+               <label for="file-upload">
+                 <ion-icon slot="icon-only" name="images"></ion-icon>
+               </label>
+                <input  (change)="newImageUpload($event)" id="file-upload" style="display: none" type="file"  accept="image/*">
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+        <ion-item>
+          <img class="image"  [src]="datos.foto">
+        </ion-item>
         <ion-item-divider>
           <ion-button size="larger" (click)="onRegister()">Registrar</ion-button>
           <ion-button size="larger" routerLink="/tabs/entrar">Entrar</ion-button>
         </ion-item-divider>
       </ion-card-content>
     </ion-card>
-  </div>
+  
 
 </ion-content>

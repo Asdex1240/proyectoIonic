@@ -13,6 +13,7 @@ export class Tab3Page implements OnInit {
   perfil: 'admin' | 'cliente' = null;
   nombre: string;
   empresa: string;
+  foto: string;
   constructor(private router: Router,
               private authSvc: AutserviceService, 
               private afAuth: AngularFireAuth,
@@ -43,6 +44,7 @@ export class Tab3Page implements OnInit {
         this.perfil = res.perfil;
         this.nombre = res.nombre;
         this.empresa = res.empresa;
+        this.foto = res.foto;
       }
     })
   }

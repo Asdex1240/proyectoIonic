@@ -1,6 +1,6 @@
 # proyectoIonic
 Hola Mundo!
-login general(80%)
-login cliente (90%)
+login general(100%)
+login cliente (100%)
 login dueño (90%)
 

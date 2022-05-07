@@ -4,4 +4,6 @@ export interface Cita{
     foto: string;
     dia: string;
     mes: string;
+    empresa: string; 
+    telefono: number;
 }

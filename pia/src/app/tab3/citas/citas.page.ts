@@ -20,6 +20,7 @@ export class CitasPage implements OnInit {
   //Fin datos del usuario
 
   //Datos Cita
+  private path = 'Citas/';
   enableNewCita = false;
   public selectedValue: 1;
   Citas: Cita[] = [];
@@ -28,7 +29,9 @@ export class CitasPage implements OnInit {
     nombre: null,
     foto: null,
     dia: null,
-    mes: null
+    mes: null,
+    empresa: null, 
+    telefono: null,
   }
 
   public dia: number[]=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
@@ -49,10 +52,10 @@ export class CitasPage implements OnInit {
                 })
               }
 
-  ngOnInit() {
+  ngOnInit() {  this.getCitas();
   }
   getDatosUser(uid: string){
-    const path = 'Usuarios';
+    const path = 'Usuarios/';
     const id = uid;
     this.firestore.getDoc<UserR>(path, id).subscribe( res =>{
       if(res){
@@ -73,8 +76,15 @@ export class CitasPage implements OnInit {
     this.newCita.nombre = this.nombre;
     this.newCita.id = this.firestore.getId(),
     this.newCita.foto = this.foto;
+    this.newCita.empresa = this.empresa;
+    this.newCita.telefono = this.telefono;
     await this.firestore.createDoc(this.newCita, path, this.newCita.id);
     this.presentToast('Cita Regristrada!');
+  }
+  getCitas() {
+    this.firestore.getCollection<Cita>(this.path).subscribe(  res => {
+           this.Citas = res;
+    });
   }
   async presentToast(msg: string) {
     const toast = await this.toastController.create({
@@ -84,5 +94,35 @@ export class CitasPage implements OnInit {
       color: 'light',
     });
     toast.present();
-}
+  }
+  async deleteProducto(cita: Cita) {
+
+    const alert = await this.alertController.create({
+      cssClass: 'normal',
+      header: 'Advertencia',
+      message: '¿Este usuario ha hecho su visita?',
+      buttons: [
+        {
+          text: 'cancelar',
+          role: 'cancel',
+          cssClass: 'normal',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Ok',
+          handler: () => {
+            console.log('Confirm Okay');
+            this.firestore.deleteDoc(this.path, cita.id).then( res => {
+              this.presentToast('eliminado con exito');
+              this.alertController.dismiss();
+            }).catch( error => {
+                this.presentToast('no se pude eliminar');
+            });
+          }
+        }
+      ]
+    });
+    await alert.present();
+  }
 }

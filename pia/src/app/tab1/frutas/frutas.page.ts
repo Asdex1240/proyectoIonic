@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FirestorageService } from 'src/app/service/firestorage.service';
 import { Producto } from 'src/app/models/producto.model';
 import { RegistroService } from '../../service/registro.service';
 @Component({
@@ -12,7 +11,7 @@ export class FrutasPage implements OnInit {
   productos: Producto[] = [];
 
   constructor(public firestoreService: RegistroService,
-              public firestorageService: FirestorageService) { }
+              ) { }
   
   ngOnInit() {
     this.getProductos();

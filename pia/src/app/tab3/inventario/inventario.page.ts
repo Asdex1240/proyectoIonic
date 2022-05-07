@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, LoadingController, MenuController, ToastController } from '@ionic/angular';
+import { AlertController, LoadingController, ToastController } from '@ionic/angular';
 import { RegistroService } from '../../service/registro.service';
 import { FirestorageService } from 'src/app/service/firestorage.service';
 import { Producto } from 'src/app/models/producto.model';

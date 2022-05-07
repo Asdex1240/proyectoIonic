@@ -23,7 +23,8 @@ export class RegisterPage implements OnInit {
     password: null,
     uid: null,
     perfil: 'cliente',
-    foto: null
+    foto: null,
+    tel: null
   }
   user: User = new User();
   constructor(private router: Router,

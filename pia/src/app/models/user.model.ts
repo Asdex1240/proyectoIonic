@@ -11,4 +11,5 @@ export class UserR {
     uid: string;
     perfil: 'admin' | 'cliente';
     foto: string;
+    tel: number;
 }

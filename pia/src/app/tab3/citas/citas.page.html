@@ -20,6 +20,27 @@
       <ion-card-header>
         <ion-card-subtitle class="ion-text-center">Agenda tu cita</ion-card-subtitle>
       </ion-card-header>
+      <ion-item>
+        <ion-label>dia</ion-label>
+        <ion-select [(ngModel)]="newCita.dia"(ionChange)="cambioValor(newCita.dia)">
+            <ion-select-option [value]="option" *ngFor="let option of  dia">{{option}}
+            </ion-select-option>
+        </ion-select> 
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Mes</ion-label>
+      <ion-select [(ngModel)]="newCita.mes" (ionChange)="cambioValor(newCita.mes)">
+          <ion-select-option [value]="option" *ngFor="let option of  mes">{{option}}
+          </ion-select-option>
+      </ion-select> 
+  </ion-item>
+  <ion-item>
+    <ion-label>Su cita será: {{newCita.dia}} / {{newCita.mes}}</ion-label>
+  </ion-item>
+  <ion-button (click)="guardarCita()">
+    Crear Cita
+    </ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

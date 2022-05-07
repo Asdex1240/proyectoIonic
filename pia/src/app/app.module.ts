@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { Camera } from '@awesome-cordova-plugins/camera/ngx';
+import { Calendar } from '@awesome-cordova-plugins/calendar/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,7 @@ import { Camera } from '@awesome-cordova-plugins/camera/ngx';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AngularFirestore, AngularFireStorageModule,
-     AngularFireStorage, Camera],
+     AngularFireStorage, Camera, Calendar],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

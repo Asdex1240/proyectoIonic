@@ -9,7 +9,7 @@ import { Producto } from 'src/app/models/producto.model';
   styleUrls: ['./inventario.page.scss'],
 })
 export class InventarioPage implements OnInit {
-  
+  public selectedValue: 'fruta' | 'verdura';
   productos: Producto[] = [];
   newProducto: Producto;
   enableNewProducto = false;
@@ -17,7 +17,7 @@ export class InventarioPage implements OnInit {
   newImage = '';
   newFile: any;
   loading: any;
-
+  public categoria: string[]=['fruta','verdura'];
   constructor(
               public firestoreService: RegistroService,
               public loadingController: LoadingController,
@@ -36,7 +36,8 @@ export class InventarioPage implements OnInit {
       nombre: '',
       foto: 'htt',
       id: this.firestoreService.getId(),
-      descrip: ''
+      descrip: '',
+      categoria: 'fruta'
     };
   }
   getProductos() {
@@ -114,6 +115,9 @@ export class InventarioPage implements OnInit {
             });
             reader.readAsDataURL(event.target.files[0]);
           }
+    }
+    cambioValor(value){
+      console.log(value);
     }
 
 

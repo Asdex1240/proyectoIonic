@@ -3,4 +3,5 @@ export interface Producto {
     foto: string;
     id: string;
     descrip: string;
+    categoria: 'fruta' | 'verdura';
 }

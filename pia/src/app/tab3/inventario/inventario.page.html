@@ -32,6 +32,13 @@
           </ion-input>
         </ion-item>
         <ion-item>
+          <ion-label>Categoria</ion-label>
+          <ion-select [(ngModel)]="newProducto.categoria" multiple="false" (ionChange)="cambioValor(newProducto.categoria)">
+              <ion-select-option [value]="option" *ngFor="let option of  categoria">{{option}}
+              </ion-select-option>
+          </ion-select>
+      </ion-item>
+        <ion-item>
           <ion-label class="normal">
               Foto:
           </ion-label>

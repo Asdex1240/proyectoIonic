@@ -8,17 +8,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row >
-      <ion-col *ngFor="let fruta of frutas" size="6">
-        <ion-card>
-          <ion-img [src]="fruta.img"></ion-img>
-          <ion-card-header>
-            <h1 class="ion-text-center">{{fruta.name}} </h1>
-            <ion-card-subtitle>{{fruta.descripcion}}</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-card *ngFor="let producto of productos">
+    <ion-card-content *ngIf="producto.categoria=='fruta'">
+      <img class="image"  [src]="producto.foto">
+        <ion-card-header>
+            <h1 class="ion-text-center">{{producto.nombre}}</h1>
+            <ion-card-subtitle class="ion-text-center">{{producto.descrip}}</ion-card-subtitle>
+        </ion-card-header>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

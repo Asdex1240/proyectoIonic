@@ -26,13 +26,10 @@ export class Tab1Page {
     }
   fov(frove){
     if(frove== 'frutas'){
-      console.log('FRUTAS');
       this.router.navigate(['tabs/tab1/frutas']);
     }else if(frove== 'verduras'){
       this.router.navigate(['tabs/tab1/verduras']);
-      console.log('VERDURAS');
     }else if(frove=='linterna'){
-      console.log('LINTERNA');
     }
   }
   getDatosUser(uid: string){

@@ -12,4 +12,5 @@ export class UserR {
     perfil: 'admin' | 'cliente';
     foto: string;
     tel: number;
+    cita: boolean;
 }

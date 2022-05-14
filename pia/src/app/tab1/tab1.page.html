@@ -31,8 +31,8 @@
     
   </section>
   <section id="linterna">
-    <ion-button size="large" (click)="fov(frove='linterna')">
-      <ion-icon name="flashlight-outline"></ion-icon>
+    <ion-button size="large" (click)="fov(frove='linterna')" color="{{isOn ? 'secondary' : 'light'}}">
+      <ion-icon name="{{isOn ? 'flashlight' : 'flashlight-outline'}}"></ion-icon>
     </ion-button>
   </section>
   

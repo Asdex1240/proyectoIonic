@@ -8,16 +8,30 @@
 </ion-header>
 
 <ion-content>
-  <agm-map
+  <agm-map 
     *ngIf="currentCenter"
     [latitude]="currentCenter.lat"
     [longitude]="currentCenter.lng"
-    [zoom]="defaultZoon"
-  >
-  <agm-marker
+    [zoom]="defaultZoom">
+    <agm-marker 
     [latitude]="currentCenter.lat"
-    [longitude]="currentCenter.lng"
-  >
+    [longitude]="currentCenter.lng" > 
     </agm-marker>
+    <agm-marker 
+    [latitude]=26.31788541752342
+    [longitude]=-99.94292600508179
+    iconUrl="assets/icon/icono_granja.png"
+    > 
+    </agm-marker>
+    <agm-marker 
+    [latitude]=26.32403998769862
+    [longitude]=-99.91443021984284
+    iconUrl="assets/icon/icono_granja.png"
+    > 
+    </agm-marker>
+    <agm-polyline [strokeColor]="'blue'" *ngIf="coordinates">
+      <agm-polyline-point *ngFor="let coords of coordinates" [latitude]="coords.lat" [longitude]="coords.lng">
+      </agm-polyline-point>
+    </agm-polyline>
   </agm-map>
 </ion-content>

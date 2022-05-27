@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Geolocation } from "@capacitor/geolocation";
 import { Plugins } from "@capacitor/core";
+const { Geolocation } = Plugins;
 
 
 @Component({
@@ -8,24 +8,36 @@ import { Plugins } from "@capacitor/core";
   templateUrl: "./map.page.html",
   styleUrls: ["./map.page.scss"]
 })
-export class MapPage {
+
+export class MapPage  {
   currentCenter: any;
   coordinates: any[] = [];
-  defaultZoon = 14;
+  defaultZoom = 14;
   constructor() {}
 
   ionViewDidEnter() {
     this.getCurrentPosition();
+    this.watchPosition();
   }
 
   async getCurrentPosition() {
     const coordinates = await Geolocation.getCurrentPosition();
     this.currentCenter = {
-      lat: 25.72569943459976,
-      lng: -100.31498633730602
+      lat: coordinates.coords.latitude,
+      lng: coordinates.coords.longitude
     };
-
-    console.log('Current position:', coordinates);
   }
-  
+
+  watchPosition(){
+    Geolocation.watchPosition({},position => {
+      this.currentCenter = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      this.coordinates.push({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      });
+    });
+  }
 }

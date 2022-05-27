@@ -20,6 +20,5 @@ export class Tab1Page {
       console.log('Mapa');
       this.router.navigate(['tabs/tab1/map']);
     }
-
   }
 }

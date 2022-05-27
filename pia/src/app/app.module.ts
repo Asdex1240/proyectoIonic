@@ -6,20 +6,19 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AgmCoreModule } from '@agm/core';
-import { environment } from "src/environments/environment";
+import { AgmCoreModule } from "@agm/core"; 
+import { environment } from 'src/environments/environment';
+import { Geolocation } from '@capacitor/geolocation';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [
-    BrowserModule, 
+  imports: [BrowserModule, 
     IonicModule.forRoot(),
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: environment.mapsKeyApi
-    })
-  ],
+    })],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
